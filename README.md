@@ -1,1 +1,4 @@
-# HW4
+Members:  
+Ryota  
+Tammy  
+Yohanes  
