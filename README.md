@@ -1,4 +1,4 @@
 Members:  
-Ryota  
-Tammy  
-Yohanes  
+- Ryota  
+- Tammy  
+- Yohanes  
