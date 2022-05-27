@@ -1,4 +1,4 @@
 Members:  
 - Ryota  
-- Tammy  
+- Tammy Le
 - Yohanes  
