@@ -1,5 +1,11 @@
-/* puzzle.h
-*/
+/**
+ * @file puzzle.h
+ * @author Yohanes
+ * @brief 
+ * Notes:
+ * 
+ * @date 2022-05-26
+ **/
 
 #pragma once
 #include<iostream>
