@@ -1,5 +1,5 @@
 /**
- * @file fitness.h
+ * @file Fitness.h
  * @author Yohanes
  * @brief 
  * Notes:
@@ -7,13 +7,15 @@
  * @date 2022-05-26
  **/
 
-#pragma once
+#ifndef FITNESS_H_
+#define FITNESS_H_
 
 #include <iostream>
-#include "puzzle.h"
+#include "Puzzle.h"
 using namespace std;
 
-class fitness {
+class Fitness {
 public:
-	virtual int howFit(const puzzle &p) = 0;    
+	virtual int howFit(const Puzzle &p) = 0;    
 };
+#endif //FITNESS_H_

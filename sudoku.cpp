@@ -1,5 +1,5 @@
 /**
- * @file sudoku.cpp
+ * @file Sudoku.cpp
  * @author Yohanes
  * @brief 
  * Notes:
@@ -7,27 +7,27 @@
  * @date 2022-05-26
  **/
 
-#include<iostream>
-#include<fstream>
-#include<istream>
-#include<ostream>
+#include <iostream>
+#include <fstream>
+#include <istream>
+#include <ostream>
 
-#include"sudoku.h"
+#include "Sudoku.h"
 using namespace std;
 
 
-ostream& operator<<(ostream &out, const sudoku &p) {
+ostream& operator<<(ostream &out, const Sudoku &p) {
 	 
 	out << p.streamOutputHelper(); 
 	return out;
 }
 
-istream& operator>>(istream &in, sudoku &input) {
+istream& operator>>(istream &in, Sudoku &input) {
 	input.streamInputHelper(in);
 	return in;
 }
 
-sudoku::sudoku() {
+Sudoku::Sudoku() {
     grid = new int*[9];
 
 	for (int i = 0; i < 9; i++) {

@@ -1,5 +1,5 @@
 /**
- * @file puzzle.h
+ * @file Puzzle.h
  * @author Yohanes
  * @brief 
  * Notes:
@@ -7,15 +7,18 @@
  * @date 2022-05-26
  **/
 
-#pragma once
-#include<iostream>
+#ifndef PUZZLE_H_
+#define PUZZLE_H_
+
+#include <iostream>
 using namespace std;
 
-class puzzle {
+class Puzzle {
 public:
-    friend ostream& operator<<(ostream &out, puzzle &p);    
-	friend istream& operator>>(istream &in, puzzle &p);
+    friend ostream& operator<<(ostream &out, Puzzle &p);    
+	friend istream& operator>>(istream &in, Puzzle &p);
 	
-    puzzle(){} // constructor
-	virtual ~puzzle(){} // destructor 
+    Puzzle(){} // constructor
+	virtual ~Puzzle(){} // destructor 
 };
+#endif //PUZZLE_H_

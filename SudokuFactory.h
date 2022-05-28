@@ -12,6 +12,7 @@
 
 #include "Puzzle.h" 
 #include "Reproduction.h"
+#include "PuzzleFactory.h"
 
 using namespace std;
 
@@ -20,7 +21,5 @@ class SudokuFactory : public PuzzleFactory {
 public:
     //default constructor 
     SudokuFactory();
-private:
-    SudokuOffspring sudokuOffspring;
 };
 #endif //SUDOKUOFACTORY_H_
