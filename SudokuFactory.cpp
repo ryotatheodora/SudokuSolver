@@ -5,3 +5,10 @@
  **/
 
 #include "SudokuFactory.h"
+
+//default constructor 
+SudokuFactory::SudokuFactory() {
+    //instaniate Reproduction object
+} 
+
+ 

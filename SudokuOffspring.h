@@ -11,13 +11,15 @@
 #ifndef SUDOKUOFFSPRING_H_
 #define SUDOKUOFFSPRING_H_
 
+#include "Puzzle.h"
+#include "Reproduction.h"
+#include <memory>
+
 using namespace std;
 
 class SudokuOffspring : public Reproduction {
 
 public:
-    Puzzle makeOffspring(Puzzle &p) override;
-private:
-
+    shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle> &p) override;
 };
 #endif // SUDOKUOFFSPRING_H_

@@ -11,17 +11,18 @@
 
 #include "Puzzle.h"
 #include "Reproduction.h"
+#include <memory>
 
 using namespace std;
 
 class PuzzleFactory {
 
 public:
-    Puzzle createPuzzle(Puzzles &p);
+    //method
+    shared_ptr<Puzzle> createPuzzle(shared_ptr<Puzzle> &p);
     //destructor 
-    virutal ~PuzzleFactory();
-
-private:
+    virtual ~PuzzleFactory() = 0;
+    shared_ptr<Reproduction> reproduction;
 };
 
 #endif //PUZZLEFACTORY_H_

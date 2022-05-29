@@ -5,3 +5,7 @@
  **/
 
 #include "SudokuOffspring.h"
+
+shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle> &p) {
+    // code for make offspring here
+}
