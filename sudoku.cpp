@@ -28,9 +28,72 @@ istream& operator>>(istream &in, Sudoku &input) {
 }
 
 Sudoku::Sudoku() {
-    grid = new int*[9];
+    grid = new int*[9]; 
+	fixed = new bool*[9];
 
 	for (int i = 0; i < 9; i++) {
-		 grid[i] = new int[9];
-    }
+		grid[i] = new int[9];
+		fixed[i] = new bool[9];
+
+		for (int j = 0; j < 9; j++) {
+			grid[i][j] = 0;                    
+			fixed[i][j] = false;
+		}
+	}
 }
+
+bool Sudoku::isFixed(int i, int j) {
+    return fixed[i][j];
+}
+
+sudoku::~sudoku() {
+	for (int i = 0; i < 9; i++) {
+		delete[] grid[i]; 
+		delete[] fixed[i];
+	}
+
+	delete[] grid;
+	delete[] fixed;
+	
+}
+
+string sudoku::helperStreamOutput(ostream &out) const {
+    const string border = "+-------+-------+-------+\n";
+
+    out << border;
+    for (int i = 0; i < 9; i++) {
+        out << "|";
+        for (int j = 0; j < 9; j++) {
+            out << " " << grid[i*9+j].first;
+            // inner border
+            if (j % 3 == 2) {
+                out << " |";
+            }
+            
+        }
+        out << endl;
+        if (i % 3 == 2) {
+            out << border;
+        }
+        
+        
+    }
+    return out;
+}
+
+void sudoku::helperStreamInput(istream& in) {
+    grid.clear();
+    char c;
+
+    while (in >> c) {
+        if (grid.size() == 81) {
+            break;
+        }
+        
+        if (isdigit(c)) {
+            grid.push_back({c - '0', c != '0'});
+        }
+    }
+    return in;
+}
+
