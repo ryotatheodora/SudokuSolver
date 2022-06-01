@@ -28,7 +28,6 @@ public:
     // read a puzzle in a compact text format
     void streamInputHelper(istream &in);
 	
-private :
 	int **grid;
 	int fitnessScore;
 };
