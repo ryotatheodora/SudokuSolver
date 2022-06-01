@@ -31,7 +31,6 @@ public:
     bool **fixed;
     bool isFixed(int i, int j);
 	
-private :
 	int **grid;
 	int fitnessScore;
 };

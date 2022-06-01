@@ -13,6 +13,7 @@
 
 #include "Puzzle.h"
 #include "Reproduction.h"
+#include "Sudoku.h"
 #include <memory>
 
 using namespace std;
