@@ -19,7 +19,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
     if(argc != 3) {
-        cerr << "Usage: " << argv[0] << " <POPULATION SIZE> , <MAX GENERATION>" << endl;
+        cerr << "Input: " << argv[0] << " <POPULATION SIZE> , <MAX GENERATION>" << endl;
         return 1;
     }
 
@@ -27,11 +27,10 @@ int main(int argc, char **argv) {
     int population_size_ = atoi(argv[1]);
     int max_gen_ = atoi(argv[2]);
 
-
-    /*
-     * Not sure how the input should be read
-     * cmd line or file
-     */
+    //reading in from the command line argument
+    shared_ptr<Puzzle> puzzle = make_shared<Sudoku>();
+    *puzzle = argv[3];
+    cout << *puzzle;
 
     //initialize genetic_algo_ with max generation, pop_size, and initial puzzle
     GeneticAlgorithm<SudokuPopulation> genetic_algo_(max_generation_, population_size_, puzzle);
