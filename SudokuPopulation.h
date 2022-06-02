@@ -22,10 +22,10 @@ using namespace std;
 class SudokuPopulation: public Population {
 public:
     SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle);
-    void cull(double x) override;
-    void newGeneration() override;
-    int bestFitness() override;
-    Individual bestIndividual() override;
+    void cull(double x);
+    void newGeneration();
+    int bestFitness();
+    Individual bestIndividual();
 };
 
 #endif

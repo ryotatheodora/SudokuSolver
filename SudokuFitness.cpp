@@ -12,7 +12,7 @@
 #include <set>
 using namespace std;
 
-int SudokuFitness::howFit(const Puzzle &p) {
+int SudokuFitness::howFit(const shared_ptr<Puzzle> &p) {
     //make copy of puzzle
     shared_ptr<Sudoku> copy = p;
 
@@ -25,9 +25,9 @@ int SudokuFitness::howFit(const Puzzle &p) {
 int SudokuFitness::checkDuplicateRow(const Sudoku &s) {
     int duplicate = 0;
 
-    for(int row = 0; i < row; row++) {
+    for(int row = 0; row < 9; row++) {
         for(int column = 0; column < 9; column++) {
-            for(int column + 1 = 0; i < 9; i++) {
+            for(int column + 1; i < 9; i++) {
                 if(s.grid[row][i] == s.grid[row][column]) {
 					duplicate++;
 				}
@@ -42,9 +42,9 @@ int SudokuFitness::checkDuplicateRow(const Sudoku &s) {
 int SudokuFitness::checkDuplicateColumn(const Sudoku &s) {
     int duplicate = 0;
 
-    for(int column = 0; i < column; column++) {
+    for(int column = 0; column < 9; column++) {
         for(int row = 0; row < 9; row++) {
-            for(int row + 1 = 0; row < 9; row++) {
+            for(int row + 1; row < 9; row++) {
                 if (s.grid[i][column] == s.grid[row][column]) {
 					duplicate++;
 				}
