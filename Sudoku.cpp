@@ -1,6 +1,9 @@
 /**
  * @file Sudoku.cpp
  * @author Yohanes
+ * @brief 
+ * Notes:
+ * 
  * @date 2022-05-26
  **/
 
@@ -11,6 +14,7 @@
 
 #include "Sudoku.h"
 using namespace std;
+
 
 ostream& operator<<(ostream &out, const Sudoku &p) {
 	out << p.streamOutputHelper(); 
@@ -52,50 +56,48 @@ Sudoku::~Sudoku() {
 	
 }
 
-string Sudoku::streamOutputHelper(ostream &out) const {
-    const string border = "+-------+-------+-------+\n";
+ostream& Sudoku::streamOutputHelper(ostream &out) const {
 
-    out << border;
-    for (int i = 0; i < 9; i++) {
-        out << "|";
-        for (int j = 0; j < 9; j++) {
-            out << " " << grid[i*9+j].first;
-            // inner border
-            if (j % 3 == 2) {
-                out << " |";
+    for(int i = 0; i < 9; i++){
+        if(i % 3 == 0){
+            out << "+-------+-------+-------+" << endl;
+        }
+         out << "| ";
+
+        for(int j = 0; j < 9; j++){
+            out << grid[i][j].getVal() << " ";
+            if((j + 1) % 3 == 0){
+               out << "| "; 
             }
-            
         }
-        out << endl;
-        if (i % 3 == 2) {
-            out << border;
-        }
-        
-        
+      out << endl;
     }
+    out << "+-------+-------+-------+" << endl;
+
     return out;
 }
 
 void Sudoku::streamInputHelper(istream& in) {
     int row = 0;
     int column = 0;
-    char c;
+	char c;
+	
+	while (in.get(c)) {                                         
+		if (c <= '9' && c >= '0') {
+			if (c != '0') {
+				fixed[column][row] = true ;
+			} else {
+				fixed[column][row] = false;
+			}
 
-    while (in.get(c)) {
-        if (c <= '9' && c >= '0') {
-            if (c != '0') {
-                isFixed[column][row] = true ;
-            } else {
-                isFixed[column][row] = false;
-            }
+			grid[column][row] = (c - '0');    
+			column++;
 
-            grid[column][row] = (c - '0');
-            column++;
-
-            if (column > 8) {
-                column = 0;
-                row++;
-            }
-        }
-    }
+			if (column > 8) {
+				column = 0;
+				row++;
+			}
+		}
+	}
 }
+
