@@ -19,10 +19,12 @@ using namespace std;
 
 class SudokuFitness : public Fitness {
 public:
-	int howFit(const Puzzle&);
+	int howFit(const Puzzle &p);
 
 	int checkDuplicateRow(const Sudoku &s);
 	int checkDuplicateColumn(const Sudoku &s);
+    int checkAllBlock(const Sudoku &s);
 	int checkDuplicateBlock(int x, int y, const Sudoku &s);
+    
 };
 #endif //SUDOKUFITNESS_H_
