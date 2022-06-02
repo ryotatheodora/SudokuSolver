@@ -1,10 +1,7 @@
 /**
  * @file Puzzle.cpp
  * @author Yohanes
- * @brief 
- * Notes:
- * 
- * @date 
+ * @date 2022-05-26
  **/
 
 #include "Puzzle.h"

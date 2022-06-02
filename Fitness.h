@@ -1,9 +1,6 @@
 /**
  * @file Fitness.h
  * @author Yohanes
- * @brief 
- * Notes:
- * 
  * @date 2022-05-26
  **/
 
