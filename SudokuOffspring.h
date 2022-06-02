@@ -21,6 +21,7 @@ using namespace std;
 class SudokuOffspring : public Reproduction {
 
 public:
+    bool getProbability();
     shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle> &p) override;
 };
 #endif // SUDOKUOFFSPRING_H_

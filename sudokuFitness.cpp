@@ -9,13 +9,13 @@
 
 #include <iostream>
 #include "Puzzle.h"
-#include "sudoku.h"
-#include "sudokuFitness.h"
+#include "Sudoku.h"
+#include "SudokuFitness.h"
 
 #include <set>
 using namespace std;
 
-int SudokuFitness::howFit(const puzzle &p) {
+int SudokuFitness::howFit(const Puzzle &p) {
     //make copy of puzzle
     shared_ptr<Sudoku> copy = p;
 

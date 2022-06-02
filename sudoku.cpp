@@ -46,7 +46,7 @@ bool Sudoku::isFixed(int i, int j) {
     return fixed[i][j];
 }
 
-sudoku::~sudoku() {
+Sudoku::~Sudoku() {
 	for (int i = 0; i < 9; i++) {
 		delete[] grid[i]; 
 		delete[] fixed[i];
@@ -57,7 +57,7 @@ sudoku::~sudoku() {
 	
 }
 
-string sudoku::helperStreamOutput(ostream &out) const {
+string Sudoku::helperStreamOutput(ostream &out) const {
     const string border = "+-------+-------+-------+\n";
 
     out << border;
@@ -81,7 +81,7 @@ string sudoku::helperStreamOutput(ostream &out) const {
     return out;
 }
 
-void sudoku::helperStreamInput(istream& in) {
+void Sudoku::helperStreamInput(istream& in) {
     grid.clear();
     char c;
 

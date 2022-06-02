@@ -37,8 +37,8 @@ int main(int argc, char **argv) {
     Individual best_ = genetic_algo_.run();
 
     //output result
-    cout << "Best fit: " << best.first << "\n";
-    cout << *best.second;
+    cout << "Best fit: " << best_.first << "\n";
+    cout << *best_.second;
 
     return 0;
 

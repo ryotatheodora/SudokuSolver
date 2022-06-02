@@ -26,6 +26,6 @@ public:
     void newGeneration() override;
     int bestFitness() override;
     Individual bestIndividual() override;
-}
+};
 
 #endif

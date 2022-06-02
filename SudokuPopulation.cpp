@@ -10,7 +10,7 @@
 SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle){
     size_ = pop_size;
     fitness = make_shared<SudokuFitness>();
-    factory = make_shared<sudokuFactory>();
+    factory = make_shared<SudokuFactory>();
     for(int i = 0; i < size; i++) {
         shared_ptr<Puzzle> p = factory->createPuzzle(puzzle);
         puzzle_vector_.emplace_back(fitness->howFit(p), p);
@@ -19,7 +19,7 @@ SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle){
 
 void Population::cull(double x) {
     sort(puzzle_vector_.begin(), puzzle_vector_.end());
-    int left = (1- x) * size;
+    int left = (1- x) * size_;
     left = max(1, left);;
     puzzle_vector_.erase(puzzle_vector_.begin() + left, puzzle_vector_.end());
 }
