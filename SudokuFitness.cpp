@@ -12,9 +12,10 @@
 #include <set>
 using namespace std;
 
-int SudokuFitness::howFit(const shared_ptr<Puzzle> &p) {
+int SudokuFitness::howFit(Puzzle* sudoku) {
     //make copy of puzzle
-    shared_ptr<Sudoku> copy = p;
+
+    Sudoku *p = dynamic_cast<const Sudoku*>(sudoku);
 
     int fitness = checkDuplicateRow(p) + checkDuplicateColumn(p) + checkAllBlock(p);
 
@@ -27,7 +28,7 @@ int SudokuFitness::checkDuplicateRow(const Sudoku &s) {
 
     for(int row = 0; row < 9; row++) {
         for(int column = 0; column < 9; column++) {
-            for(int column + 1; i < 9; i++) {
+            for(int i = column + 1; i < 9; i++) {
                 if(s.grid[row][i] == s.grid[row][column]) {
 					duplicate++;
 				}
@@ -44,7 +45,7 @@ int SudokuFitness::checkDuplicateColumn(const Sudoku &s) {
 
     for(int column = 0; column < 9; column++) {
         for(int row = 0; row < 9; row++) {
-            for(int row + 1; row < 9; row++) {
+            for(int i = row + 1; i < 9; i++) {
                 if (s.grid[i][column] == s.grid[row][column]) {
 					duplicate++;
 				}
@@ -60,7 +61,7 @@ int SudokuFitness::checkAllBlock(const Sudoku &s) {
     int duplicate = 0;
     for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			duplicate += checkDuplicateBlock(i, j, s);
+			duplicate += checkDuplicateBlock(s, i, j);
 		}
 	} 
 }
@@ -80,8 +81,8 @@ int SudokuFitness::checkDuplicateBlock(const Sudoku &s, int x, int y) {
 	}
 
     // check if there is duplicate value
-	for (int i = 0; i < temp.size(); i++) {
-		for (int j = i + 1; j < temp.size(); j++) {
+	for (int i = 0; i < 9; i++) {
+		for (int j = i + 1; j < 9; j++) {
 			if (temp[i] == temp[j]) {
 				duplicate++;
 			}

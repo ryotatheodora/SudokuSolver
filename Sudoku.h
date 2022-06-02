@@ -24,7 +24,7 @@ public:
 	~Sudoku();
 
     // returns a string representation of the sudoku
-	string streamOutputHelper(ostream &out) const;
+	ostream& streamOutputHelper(ostream &out) const;
 
     // read a puzzle in a compact text format
     void streamInputHelper(istream &in);
