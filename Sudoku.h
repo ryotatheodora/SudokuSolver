@@ -19,11 +19,12 @@ class Sudoku : public Puzzle {
 public:
     friend ostream& operator<<(ostream &out, Sudoku &p);
 	friend istream& operator>>(istream &in, Sudoku &p);
+
 	Sudoku();
 	~Sudoku();
 
     // returns a string representation of the sudoku
-	string streamOutputHelper(ostream &out  ) const;
+	string streamOutputHelper(ostream &out) const;
 
     // read a puzzle in a compact text format
     void streamInputHelper(istream &in);

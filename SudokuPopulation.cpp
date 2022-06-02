@@ -31,7 +31,7 @@ void SudokuPopulation::newGeneration() {
         shared_ptr<Puzzle> p = factory->createPuzzle(puzzle_vector_[i].second);
         puzzle_vector_.emplace_back(fitness->howFit(p), p);
         if((i+=1) == remain_)
-            return 0;
+            return;
         else
             i + 1;
     }

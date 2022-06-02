@@ -12,9 +12,7 @@
 #include "Sudoku.h"
 using namespace std;
 
-
 ostream& operator<<(ostream &out, const Sudoku &p) {
-	 
 	out << p.streamOutputHelper(); 
 	return out;
 }
@@ -54,7 +52,7 @@ Sudoku::~Sudoku() {
 	
 }
 
-string Sudoku::helperStreamOutput(ostream &out) const {
+string Sudoku::streamOutputHelper(ostream &out) const {
     const string border = "+-------+-------+-------+\n";
 
     out << border;
@@ -78,19 +76,26 @@ string Sudoku::helperStreamOutput(ostream &out) const {
     return out;
 }
 
-void Sudoku::helperStreamInput(istream& in) {
-    grid.clear();
+void Sudoku::streamInputHelper(istream& in) {
+    int row = 0;
+    int column = 0;
     char c;
 
-    while (in >> c) {
-        if (grid.size() == 81) {
-            break;
-        }
-        
-        if (isdigit(c)) {
-            grid.push_back({c - '0', c != '0'});
+    while (in.get(c)) {
+        if (c <= '9' && c >= '0') {
+            if (c != '0') {
+                isFixed[column][row] = true ;
+            } else {
+                isFixed[column][row] = false;
+            }
+
+            grid[column][row] = (c - '0');
+            column++;
+
+            if (column > 8) {
+                column = 0;
+                row++;
+            }
         }
     }
-    return in;
 }
-

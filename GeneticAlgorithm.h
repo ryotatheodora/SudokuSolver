@@ -4,7 +4,6 @@
 *   
 * Date: 5/30/2022
 */
-
 #ifndef GENETIC_ALGORITHM_H_
 #define GENETIC_ALGORTIHM_H_
 
