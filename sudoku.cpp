@@ -1,9 +1,6 @@
 /**
  * @file Sudoku.cpp
  * @author Yohanes
- * @brief 
- * Notes:
- * 
  * @date 2022-05-26
  **/
 
