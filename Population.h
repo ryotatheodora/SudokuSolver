@@ -54,7 +54,7 @@ public:
 	* method: cull
 	* eliminates x% least fit of a generation
 	*/
-	void cull(double x);
+	virtual void cull(double x) = 0;
 
 	/*
 	* method: pure virtual bestFitness
