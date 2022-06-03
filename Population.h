@@ -1,7 +1,12 @@
 /*
 * Author: Ryota Theodora
 * file: Population.h
-*   
+* Notes: Population is a container for a number of puzzles - Use a vector of puzzles
+* Cull puzzles from the population
+* Constructors that create initial randomized puzzles
+* new generation method that creats x number of new puzzles using the top 10%
+* best fitness returns the lowest fitness score (best score)
+* best individual returns the puzzle with the best fitness
 * Date: 5/30/2022
 */
 

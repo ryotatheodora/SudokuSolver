@@ -3,7 +3,10 @@
  * @author Yohanes
  * @brief 
  * Notes:
- * 
+ * 9x9 grid with fixed (isFixed) and initialized data
+ * Output operators - used through puzzle inheritance
+ * Reads file and ignored anything not between 0 and 9 (first 81 integers)
+ * Outputs sudoku puzzle
  * @date 2022-05-26
  **/
 
