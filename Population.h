@@ -23,7 +23,7 @@ using namespace std;
 using Individual = pair<int, shared_ptr<Puzzle>>;
 
 class Population {
-private:
+protected:
 	int size_;
 	vector<Individual> puzzle_vector_;
 	shared_ptr<Fitness> fitness_ptr_;
@@ -54,19 +54,19 @@ public:
 	* method: cull
 	* eliminates x% least fit of a generation
 	*/
-	void cull(int x);
+	void cull(double x);
 
 	/*
 	* method: pure virtual bestFitness
 	* returns the fitness of the best puzzle in the current generation
 	*/
-	virtual Fitness bestFitness(Puzzle current) = 0;
+	virtual int bestFitness() = 0;
 
 	/*
 	* method: pure Virtual bestIndividuals
 	* returns the puzzle with the highest fitness
 	*/
-	virtual Individual bestIndividual(Fitness fitness) = 0;
+	virtual Individual bestIndividual() = 0;
 
 };
 #endif

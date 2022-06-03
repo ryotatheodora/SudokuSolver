@@ -10,7 +10,7 @@
 #ifndef SUDOKUOFACTORY_H_
 #define SUDOKUOFACTORY_H_
 
-#include "Puzzle.h" 
+#include "Sudoku.h" 
 #include "Reproduction.h"
 #include "PuzzleFactory.h"
 
@@ -21,5 +21,7 @@ class SudokuFactory : public PuzzleFactory {
 public:
     //default constructor 
     SudokuFactory();
+    Puzzle createPuzzle(Puzzle* p) override;
+
 };
 #endif //SUDOKUOFACTORY_H_

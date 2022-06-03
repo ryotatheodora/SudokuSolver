@@ -22,6 +22,6 @@ class SudokuOffspring : public Reproduction {
 
 public:
     bool getProbability();
-    shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle> &p) override;
+    Puzzle makeOffspring(Puzzle *p) override;
 };
 #endif // SUDOKUOFFSPRING_H_

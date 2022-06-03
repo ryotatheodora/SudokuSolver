@@ -19,7 +19,7 @@ public:
 	virtual ~Puzzle(){} // destructor 
     
 private:
-    virtual istream &readin(istream &in) = 0;
-    virtual ostream &printout(ostream &out) const = 0;
+    virtual istream &streamInputHelper(istream &in) = 0;
+    virtual ostream &streamOutputHelper(ostream &out) const = 0;
 };
 #endif //PUZZLE_H_

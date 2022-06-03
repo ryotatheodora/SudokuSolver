@@ -2,7 +2,11 @@
     "files.associations": {
         "iosfwd": "cpp",
         "memory": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "new": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

@@ -22,8 +22,9 @@ class Sudoku : public Puzzle {
 public:
     friend ostream& operator<<(ostream &out, Sudoku &p);
 	friend istream& operator>>(istream &in, Sudoku &p);
-
+    // constructor
 	Sudoku();
+    // destructor
 	~Sudoku();
 
     // returns a string representation of the sudoku

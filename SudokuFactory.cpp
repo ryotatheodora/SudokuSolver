@@ -11,4 +11,8 @@ SudokuFactory::SudokuFactory() {
     //instaniate Reproduction object
 } 
 
- 
+//method to create new puzzle
+Puzzle SudokuFactory::createPuzzle(Puzzle* p) {
+    Sudoku copiedP = reproduction->makeOffspring(p);
+    return copiedP; //return copied puzzle
+}
