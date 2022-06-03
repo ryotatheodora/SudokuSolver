@@ -3,7 +3,7 @@
  * @author Yohanes
  * @brief 
  * Notes:
- * 
+ * Implements "howFit" for Sudoku objects
  * @date 2022-05-26
  **/
 

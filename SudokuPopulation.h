@@ -1,7 +1,7 @@
 /*
 * Author: Ryota Theodora
 * file: SudokuPopulation.h
-*   
+* Implements population, uses sudokuFitness and sudokuFactory 
 * Date: 5/30/2022
 */
 
@@ -27,5 +27,4 @@ public:
     int bestFitness();
     Individual bestIndividual();
 };
-
 #endif

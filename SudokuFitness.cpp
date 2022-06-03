@@ -12,7 +12,7 @@
 #include <set>
 using namespace std;
 
-int SudokuFitness::howFit(Puzzle* sudoku) {
+int SudokuFitness::howFit(const Puzzle* sudoku) {
     //make copy of puzzle
 
     Sudoku *p = dynamic_cast<const Sudoku*>(sudoku);

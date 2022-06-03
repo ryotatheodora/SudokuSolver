@@ -13,14 +13,3 @@ ostream& operator<<(ostream &out, Puzzle &p) {
 istream& operator>>(istream &in, Puzzle &p) {
     return p.readin(in);
 }
-/*
- constructor
-*/
-Puzzle::Puzzle(){
-}
-
-/*
- destructor
-*/
-Puzzle::~Puzzle() {
-}

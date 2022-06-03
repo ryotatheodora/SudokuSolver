@@ -1,7 +1,12 @@
 /*
 * Author: Ryota Theodora
 * file: GeneticAlgorithm.h
-*   
+* Notes: 
+* ask the Population for the bestFitness, halting iterations if a solution has been found or 
+if the maximum number of generations limit has been reached,
+* command the Population to cull 90% of its Puzzles, and
+* command the Population to reproduce a newGeneration.
+* can choose to output up to 10 puzzles as it executes
 * Date: 5/30/2022
 */
 #ifndef GENETIC_ALGORITHM_H_
