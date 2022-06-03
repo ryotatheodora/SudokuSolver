@@ -30,7 +30,7 @@ public:
 };
 
 template<typename T>
-GeneticAlgorithm<T>::GeneticAlgorithm(int max_gen, int pop_size, shared_ptr<Puzzle> &initial): max_generation_(max_generation_), population_(make_shared<T>(pop_size, initial)){
+GeneticAlgorithm<T>::GeneticAlgorithm(int max_gen, int pop_size, shared_ptr<Puzzle> &initial): max_generation_(max_gen), population_(make_shared<T>(pop_size, initial)){
 
 }
 
@@ -58,5 +58,4 @@ Individual GeneticAlgorithm<T>::run() {
 
     return best;
 }
-
 #endif
