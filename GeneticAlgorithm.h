@@ -10,7 +10,7 @@ if the maximum number of generations limit has been reached,
 * Date: 5/30/2022
 */
 #ifndef GENETIC_ALGORITHM_H_
-#define GENETIC_ALGORTIHM_H_
+#define GENETIC_ALGORITHM_H_
 
 #include "Population.h"
 #include "Puzzle.h"
