@@ -1,9 +1,6 @@
 /**
  * @file Sudoku.cpp
  * @author Yohanes
- * @brief 
- * Notes:
- * 
  * @date 2022-05-26
  **/
 
@@ -15,18 +12,19 @@
 #include "Sudoku.h"
 using namespace std;
 
-
+//output method to output sudoku puzzle
 ostream& operator<<(ostream &out, const Sudoku &p) {
 	out << p.streamOutputHelper(); 
 	return out;
 }
-
+// input function to read file 
 istream& operator>>(istream &in, Sudoku &input) {
 	input.streamInputHelper(in);
 	return in;
 }
-
+//default constructor
 Sudoku::Sudoku() {
+	//initialize
     grid = new int*[9]; 
 	fixed = new bool*[9];
 
@@ -40,11 +38,11 @@ Sudoku::Sudoku() {
 		}
 	}
 }
-
+// isFixed method is checking values if it is fixed or variable.
 bool Sudoku::isFixed(int i, int j) {
     return fixed[i][j];
 }
-
+// destructor
 Sudoku::~Sudoku() {
 	for (int i = 0; i < 9; i++) {
 		delete[] grid[i]; 
@@ -55,9 +53,8 @@ Sudoku::~Sudoku() {
 	delete[] fixed;
 	
 }
-
+// helper function for output
 ostream& Sudoku::streamOutputHelper(ostream &out) const {
-
     for(int i = 0; i < 9; i++){
         if(i % 3 == 0){
             out << "+-------+-------+-------+" << endl;
@@ -76,7 +73,7 @@ ostream& Sudoku::streamOutputHelper(ostream &out) const {
 
     return out;
 }
-
+//helper function input
 void Sudoku::streamInputHelper(istream& in) {
     int row = 0;
     int column = 0;

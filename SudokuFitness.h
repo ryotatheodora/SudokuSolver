@@ -19,7 +19,7 @@ using namespace std;
 
 class SudokuFitness : public Fitness {
 public:
-	int howFit(Puzzle* sudoku);
+	int howFit(Puzzle* sudoku) override;
 
 	int checkDuplicateRow(const Sudoku &s);
 	int checkDuplicateColumn(const Sudoku &s);
