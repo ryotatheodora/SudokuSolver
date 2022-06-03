@@ -78,7 +78,7 @@ for(int i = 0; i < 9; i++){
     return out;
 }
 //helper function input
-void Sudoku::streamInputHelper(istream& in) {
+istream& Sudoku::streamInputHelper(istream& in) {
     int row = 0;
     int column = 0;
 	char c;
