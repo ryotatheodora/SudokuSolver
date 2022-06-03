@@ -12,7 +12,7 @@ SudokuFactory::SudokuFactory() {
 } 
 
 //method to create new puzzle
-Puzzle SudokuFactory::createPuzzle(Puzzle* p) {
-    Sudoku copiedP = reproduction->makeOffspring(p);
+Puzzle* SudokuFactory::createPuzzle(Puzzle* p) {
+    Puzzle* copiedP = sudokuOffspring.makeOffspring(p);
     return copiedP; //return copied puzzle
 }

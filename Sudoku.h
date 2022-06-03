@@ -33,10 +33,8 @@ public:
     // read a puzzle in a compact text format
     istream &streamInputHelper(istream &in) override;
 
-    bool **fixed;
-    bool isFixed(int i, int j);
-	
-	int **grid;
-	int fitnessScore;
+    // helper method
+    bool isFixed(int i, int j) override;
+    
 };
 #endif //SUDOKU_H_

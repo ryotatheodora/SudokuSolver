@@ -20,7 +20,7 @@ class Reproduction {
 
 public:
     // makeOffspring method, takes a puzzle and returns new puzzle
-    virtual Puzzle makeOffspring(Puzzle *p) = 0;
-    virtual ~Reproduction() = default;
+    virtual Puzzle* makeOffspring(Puzzle *p) = 0;
+    ~Reproduction() = default;
 };
 #endif //REPRODUCTION_H_
