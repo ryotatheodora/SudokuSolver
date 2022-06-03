@@ -23,25 +23,25 @@ template<typename T>
 class GeneticAlgorithm {
 private:
     int max_generation_;
-    shared_ptr<Population> population;
+    shared_ptr<Population> population_;
 public:
     GeneticAlgorithm(int max_gen, int pop_size, shared_ptr<Puzzle> &initial);
     Individual run();
 };
 
 template<typename T>
-GeneticAlgorithm<T>::GeneticAlgorithm(int max_gen, int pop_size, shared_ptr<Puzzle> &initial): max_generation_(max_generation_), population(make_shared<T>(pop_size, initial)){
+GeneticAlgorithm<T>::GeneticAlgorithm(int max_gen, int pop_size, shared_ptr<Puzzle> &initial): max_generation_(max_generation_), population_(make_shared<T>(pop_size, initial)){
 
 }
 
 template<typename T>
-Individual GeneticAlgorithm::run() {
+Individual GeneticAlgorithm<T>::run() {
     Individual best{numeric_limits<int>::max(), nullptr};
 
     //run until max_gen
-    for(int i = 0; i < max_gen; ++i) {
+    for(int i = 0; i < max_generation_; ++i) {
         //getting best individual
-        Individual current_best = population->bestIndividual();
+        Individual current_best = population_->bestIndividual();
         //found solution
         if(current_best.first == 0) {
             best = current_best;
@@ -52,9 +52,11 @@ Individual GeneticAlgorithm::run() {
             best = current_best;
         }
         //cull 90% individuals
-        population->cull(0.9);
-        population->newGeneration();
+        population_->cull(0.9);
+        population_->newGeneration();
     }
 
     return best;
 }
+
+#endif

@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
 
     //reading in from the command line argument for initial puzzle
     shared_ptr<Puzzle> puzzle = make_shared<Sudoku>();
-    *puzzle = argv[3];
+    *puzzle >> argv[3];
     cout << *puzzle;
 
     //initialize genetic_algo_ with max generation, pop_size, and initial puzzle

@@ -32,7 +32,7 @@ void SudokuPopulation::newGeneration() {
         if((i+=1) == remain_)
             return;
         else
-            i + 1;
+            i++;
     }
 }
 
