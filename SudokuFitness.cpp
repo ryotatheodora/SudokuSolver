@@ -88,7 +88,6 @@ int SudokuFitness::checkDuplicateBlock(const Sudoku &s, int x, int y) {
 			}
 		}
     }
-
 	return duplicate;
 }
 
