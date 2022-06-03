@@ -17,6 +17,13 @@ public:
 	
     Puzzle(){} // constructor
 	virtual ~Puzzle(){} // destructor 
+
+    bool **fixed;	
+	int **grid;
+	int fitnessScore;
+
+    // helper method
+    virtual bool isFixed(int i, int j);
     
 private:
     virtual istream &streamInputHelper(istream &in) = 0;

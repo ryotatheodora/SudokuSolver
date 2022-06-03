@@ -100,4 +100,5 @@ istream& Sudoku::streamInputHelper(istream& in) {
 			}
 		}
 	}
+	return in;
 }

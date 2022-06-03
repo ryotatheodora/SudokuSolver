@@ -11,7 +11,7 @@
 #define SUDOKUOFACTORY_H_
 
 #include "Sudoku.h" 
-#include "Reproduction.h"
+#include "SudokuOffspring.h"
 #include "PuzzleFactory.h"
 
 using namespace std;
@@ -21,7 +21,11 @@ class SudokuFactory : public PuzzleFactory {
 public:
     //default constructor 
     SudokuFactory();
-    Puzzle createPuzzle(Puzzle* p) override;
+    ~SudokuFactory();
+    
+    Puzzle* createPuzzle(Puzzle* p) override;
 
+    //class member
+    SudokuOffspring sudokuOffspring;
 };
 #endif //SUDOKUOFACTORY_H_

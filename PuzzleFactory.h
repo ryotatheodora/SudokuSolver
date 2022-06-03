@@ -19,10 +19,9 @@ class PuzzleFactory {
 
 public:
     //method
-    virtual Puzzle createPuzzle(Puzzle* p) = 0;
+    virtual Puzzle* createPuzzle(Puzzle* p) = 0;
     //destructor 
     virtual ~PuzzleFactory() = 0;
-    shared_ptr<Reproduction> reproduction;
 };
 
 #endif //PUZZLEFACTORY_H_

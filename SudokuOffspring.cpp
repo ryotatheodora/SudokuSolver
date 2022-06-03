@@ -15,11 +15,11 @@ bool getProbability() {
 // method to make offspring 
 // (uses the method in sudoku class where that method 
 // checked if the values are fixed or variable)
-Sudoku makeOffspring(Sudoku *p) {
+Puzzle* makeOffspring(Puzzle *p) {
     // code for make offspring here - pseudocode:
 
     //make copy of puzzle
-    Sudoku copy = p;
+    Puzzle* copy = p;
     //visit each cell (x,y) - double for loop bc matrix 
 
     int size = sizeof(p->grid); 
@@ -28,7 +28,7 @@ Sudoku makeOffspring(Sudoku *p) {
         for (int j = 0; j < size; j++ ) {
             if(!p->isFixed(i, j) && getProbability()) { //isFixed coming from yohanes sudoku class probability
                 // then change value
-                copy.grid[i][j] = rand() % 10 + 1; 
+                copy->grid[i][j] = rand() % 10 + 1; 
             }
         }
     }
