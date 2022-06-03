@@ -16,6 +16,6 @@ using namespace std;
 
 class Fitness {
 public:
-	virtual int howFit(const Puzzle &p) = 0;    
+	virtual int howFit(Puzzle *p) = 0;    
 };
 #endif //FITNESS_H_

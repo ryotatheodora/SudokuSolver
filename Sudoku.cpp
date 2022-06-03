@@ -12,9 +12,10 @@
 #include "Sudoku.h"
 using namespace std;
 
+/*
 //output method to output sudoku puzzle
 ostream& operator<<(ostream &out, const Sudoku &p) {
-	out << p.streamOutputHelper(); 
+	out << p.streamOutputHelper(out); 
 	return out;
 }
 // input function to read file 
@@ -22,6 +23,8 @@ istream& operator>>(istream &in, Sudoku &input) {
 	input.streamInputHelper(in);
 	return in;
 }
+*/
+
 //default constructor
 Sudoku::Sudoku() {
 	//initialize
@@ -51,18 +54,19 @@ Sudoku::~Sudoku() {
 
 	delete[] grid;
 	delete[] fixed;
-	
 }
 // helper function for output
 ostream& Sudoku::streamOutputHelper(ostream &out) const {
-    for(int i = 0; i < 9; i++){
+for(int i = 0; i < 9; i++){
         if(i % 3 == 0){
             out << "+-------+-------+-------+" << endl;
         }
-         out << "| ";
+        out << "| ";
 
         for(int j = 0; j < 9; j++){
-            out << grid[i][j].getVal() << " ";
+            char c = grid[j][i] + '0';
+            out << c << " ";
+
             if((j + 1) % 3 == 0){
                out << "| "; 
             }
@@ -97,4 +101,3 @@ void Sudoku::streamInputHelper(istream& in) {
 		}
 	}
 }
-

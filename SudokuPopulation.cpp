@@ -7,12 +7,11 @@
 
 #include "SudokuPopulation.h"
 
-SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle){
+SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle> *puzzle){
     size_ = pop_size;
-    fitness = make_shared<SudokuFitness>();
-    factory = make_shared<SudokuFactory>();
-    for(int i = 0; i < size; i++) {
-        shared_ptr<Puzzle> p = factory->createPuzzle(puzzle);
+
+    for(int i = 0; i < size_; i++) {
+        shared_ptr<Puzzle> p = factory->createPuzzle(*puzzle);
         puzzle_vector_.emplace_back(fitness->howFit(p), p);
     }
 }
@@ -27,7 +26,7 @@ void Population::cull(double x) {
 void SudokuPopulation::newGeneration() {
     int remain_ = puzzle_vector_.size();
     int i = 0;
-    while ((int)puzzle_vector_.size() < size) {
+    while ((int)puzzle_vector_.size() < size_) {
         shared_ptr<Puzzle> p = factory->createPuzzle(puzzle_vector_[i].second);
         puzzle_vector_.emplace_back(fitness->howFit(p), p);
         if((i+=1) == remain_)
@@ -37,11 +36,11 @@ void SudokuPopulation::newGeneration() {
     }
 }
 
-Fitness Population::bestFitness(Puzzle current) {
+int SudokuPopulation::bestFitness() {
     auto it = min_element(puzzle_vector_.begin(), puzzle_vector_.end());
     return it->first;
 }
 
-Individual Population::bestIndividual(Fitness fitness) {
+Individual SudokuPopulation::bestIndividual() {
     return *min_element(puzzle_vector_.begin(), puzzle_vector_.end());
 }

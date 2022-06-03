@@ -7,9 +7,9 @@
 #include "Puzzle.h"
 
 ostream& operator<<(ostream &out, Puzzle &p) {
-    return p.printout(out);
+    return p.streamOutputHelper(out);
 }
 
 istream& operator>>(istream &in, Puzzle &p) {
-    return p.readin(in);
+    return p.streamInputHelper(in);
 }

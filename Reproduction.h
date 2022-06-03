@@ -20,7 +20,7 @@ class Reproduction {
 
 public:
     // makeOffspring method, takes a puzzle and returns new puzzle
-    virtual shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle> &p) = 0;
+    virtual Puzzle makeOffspring(Puzzle *p) = 0;
     virtual ~Reproduction() = default;
 };
 #endif //REPRODUCTION_H_

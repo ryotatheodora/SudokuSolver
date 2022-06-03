@@ -19,12 +19,15 @@ using namespace std;
 
 class SudokuFitness : public Fitness {
 public:
-	int howFit(Puzzle* sudoku) override;
+	//constructor
+	SudokuFitness();
 
-	int checkDuplicateRow(const Sudoku &s);
-	int checkDuplicateColumn(const Sudoku &s);
-    int checkAllBlock(const Sudoku &s);
-	int checkDuplicateBlock(const Sudoku &s, int x, int y);
+	int howFit(Puzzle *sudoku);
+
+	int checkDuplicateRow(Sudoku *s);
+	int checkDuplicateColumn(Sudoku *s);
+    int checkAllBlock(Sudoku *s);
+	int checkDuplicateBlock(Sudoku *s, int x, int y);
     
 };
 #endif //SUDOKUFITNESS_H_

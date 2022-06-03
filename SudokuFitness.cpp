@@ -12,10 +12,10 @@
 #include <set>
 using namespace std;
 
-int SudokuFitness::howFit(const Puzzle* sudoku) {
+int SudokuFitness::howFit(Puzzle* sudoku) {
     //make copy of puzzle
 
-    Sudoku *p = dynamic_cast<const Sudoku*>(sudoku);
+    Sudoku *p = dynamic_cast<Sudoku*>(sudoku);
 
     int fitness = checkDuplicateRow(p) + checkDuplicateColumn(p) + checkAllBlock(p);
 
@@ -23,13 +23,13 @@ int SudokuFitness::howFit(const Puzzle* sudoku) {
 }
 
 // check duplicate in every row of the sudoku
-int SudokuFitness::checkDuplicateRow(const Sudoku &s) {
+int SudokuFitness::checkDuplicateRow(Sudoku *s) {
     int duplicate = 0;
 
     for(int row = 0; row < 9; row++) {
         for(int column = 0; column < 9; column++) {
             for(int i = column + 1; i < 9; i++) {
-                if(s.grid[row][i] == s.grid[row][column]) {
+                if(s->grid[row][i] == s->grid[row][column]) {
 					duplicate++;
 				}
             }
@@ -40,13 +40,13 @@ int SudokuFitness::checkDuplicateRow(const Sudoku &s) {
 }
 
 // check duplicate in every column of the sudoku
-int SudokuFitness::checkDuplicateColumn(const Sudoku &s) {
+int SudokuFitness::checkDuplicateColumn(Sudoku *s) {
     int duplicate = 0;
 
     for(int column = 0; column < 9; column++) {
         for(int row = 0; row < 9; row++) {
             for(int i = row + 1; i < 9; i++) {
-                if (s.grid[i][column] == s.grid[row][column]) {
+                if (s->grid[i][column] == s->grid[row][column]) {
 					duplicate++;
 				}
             }
@@ -57,17 +57,18 @@ int SudokuFitness::checkDuplicateColumn(const Sudoku &s) {
 }
 
 // Move from one block to another block
-int SudokuFitness::checkAllBlock(const Sudoku &s) {
+int SudokuFitness::checkAllBlock(Sudoku *s) {
     int duplicate = 0;
     for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			duplicate += checkDuplicateBlock(s, i, j);
 		}
-	} 
+	}
+    return duplicate;
 }
 
 // check duplicates in 3X3 grids of the sudoku
-int SudokuFitness::checkDuplicateBlock(const Sudoku &s, int x, int y) {
+int SudokuFitness::checkDuplicateBlock(Sudoku *s, int x, int y) {
     int temp[9];
 	int duplicate = 0;
     int k = 0;
@@ -75,7 +76,7 @@ int SudokuFitness::checkDuplicateBlock(const Sudoku &s, int x, int y) {
     // traverse 3*3 grid put the value to the temp 
 	for (int row = 0; row < 3; row++) {
 		for (int column = 0; column < 3; column++) {
-			temp[k] = s.grid[(3 * x) + row][(3 * y) + column];  
+			temp[k] = s->grid[(3 * x) + row][(3 * y) + column];  
 			k++;
 		}
 	}
