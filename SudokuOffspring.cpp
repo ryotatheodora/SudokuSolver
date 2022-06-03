@@ -6,9 +6,9 @@
 
 #include "SudokuOffspring.h"
 
-SudokuOffspring::SudokuOffspring() {}
+SudokuOffspring::SudokuOffspring(){}
 
-SudokuOffspring::~SudokuOffspring() {}
+SudokuOffspring::~SudokuOffspring(){}
 
 //helper function to retreive probability
 bool SudokuOffspring::getProbability() {
