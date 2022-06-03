@@ -28,10 +28,10 @@ public:
 	~Sudoku();
 
     // returns a string representation of the sudoku
-	ostream& streamOutputHelper(ostream &out) const;
+	ostream &streamOutputHelper(ostream &out) const override;
 
     // read a puzzle in a compact text format
-    void streamInputHelper(istream &in);
+    istream &streamInputHelper(istream &in) override;
 
     bool **fixed;
     bool isFixed(int i, int j);

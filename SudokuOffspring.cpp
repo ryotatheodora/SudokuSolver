@@ -28,7 +28,7 @@ Sudoku makeOffspring(Sudoku *p) {
         for (int j = 0; j < size; j++ ) {
             if(!p->isFixed(i, j) && getProbability()) { //isFixed coming from yohanes sudoku class probability
                 // then change value
-                copy->grid[i][j] = rand() % 10 + 1; 
+                copy.grid[i][j] = rand() % 10 + 1; 
             }
         }
     }
