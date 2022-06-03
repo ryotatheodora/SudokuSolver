@@ -16,7 +16,7 @@ SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle>& puzzle){
     }
 }
 
-void Population::cull(double x) {
+void SudokuPopulation::cull(double x) {
     //sorts the vector using the C++ sorting feature
     sort(puzzle_vector_.begin(), puzzle_vector_.end());
     int left = (1- x) * size_;
@@ -37,11 +37,11 @@ void SudokuPopulation::newGeneration() {
     }
 }
 
-int Population::bestFitness() {
+int SudokuPopulation::bestFitness() {
     auto it = min_element(puzzle_vector_.begin(), puzzle_vector_.end());
     return it->first;
 }
 
-Individual Population::bestIndividual() {
+Individual SudokuPopulation::bestIndividual() {
     return *min_element(puzzle_vector_.begin(), puzzle_vector_.end());
 }
