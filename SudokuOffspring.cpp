@@ -6,8 +6,12 @@
 
 #include "SudokuOffspring.h"
 
+SudokuOffspring::SudokuOffspring() {}
+
+SudokuOffspring::~SudokuOffspring() {}
+
 //helper function to retreive probability
-bool getProbability() {
+bool SudokuOffspring::getProbability() {
     int random = rand() % 100 + 1;
     return random <= 5;
 }
@@ -15,7 +19,7 @@ bool getProbability() {
 // method to make offspring 
 // (uses the method in sudoku class where that method 
 // checked if the values are fixed or variable)
-shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle>& p) {
+shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& p) {
     // code for make offspring here - pseudocode:
 
     //make copy of puzzle

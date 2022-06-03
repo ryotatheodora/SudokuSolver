@@ -23,7 +23,7 @@ public:
 	int fitnessScore;
 
     // helper method
-    virtual bool isFixed(int i, int j);
+    virtual bool isFixed(int i, int j) = 0;
     
 private:
     virtual istream &streamInputHelper(istream &in) = 0;
