@@ -15,11 +15,11 @@ bool getProbability() {
 // method to make offspring 
 // (uses the method in sudoku class where that method 
 // checked if the values are fixed or variable)
-Puzzle* makeOffspring(Puzzle *p) {
+shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle>& p) {
     // code for make offspring here - pseudocode:
 
     //make copy of puzzle
-    Puzzle* copy = p;
+    shared_ptr<Puzzle>& copy = p;
     //visit each cell (x,y) - double for loop bc matrix 
 
     int size = sizeof(p->grid); 
