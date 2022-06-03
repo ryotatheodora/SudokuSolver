@@ -7,11 +7,11 @@
 
 #include "SudokuPopulation.h"
 
-SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle> *puzzle){
+SudokuPopulation::SudokuPopulation(int pop_size, Puzzle *puzzle){
     size_ = pop_size;
 
     for(int i = 0; i < size_; i++) {
-        shared_ptr<Puzzle> p = factory->createPuzzle(*puzzle);
+        Puzzle* p = factory->createPuzzle(puzzle);
         puzzle_vector_.emplace_back(fitness->howFit(p), p);
     }
 }
@@ -27,7 +27,7 @@ void SudokuPopulation::newGeneration() {
     int remain_ = puzzle_vector_.size();
     int i = 0;
     while ((int)puzzle_vector_.size() < size_) {
-        shared_ptr<Puzzle> p = factory->createPuzzle(puzzle_vector_[i].second);
+        Puzzle* p = factory->createPuzzle(puzzle_vector_[i].second);
         puzzle_vector_.emplace_back(fitness->howFit(p), p);
         if((i+=1) == remain_)
             return;

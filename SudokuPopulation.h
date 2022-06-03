@@ -22,7 +22,7 @@ using namespace std;
 class SudokuPopulation: public Population {
 public:
     // initialized population 
-    SudokuPopulation(int pop_size, shared_ptr<Puzzle> *puzzle);
+    SudokuPopulation(int pop_size, Puzzle *puzzle);
     // removes the boom x percentage of puzzle based off of fitness
     void cull(double x);
     void newGeneration();

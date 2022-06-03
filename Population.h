@@ -20,7 +20,7 @@
 #include <memory>
 
 using namespace std;
-using Individual = pair<int, shared_ptr<Puzzle>>;
+using Individual = pair<int, Puzzle*>;
 
 class Population {
 protected:
