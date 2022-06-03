@@ -6,6 +6,12 @@
 
 #include "Puzzle.h"
 
+Puzzle::Puzzle() {
+}
+
+Puzzle::~Puzzle() {
+}
+
 ostream& operator<<(ostream &out, Puzzle &p) {
     return p.streamOutputHelper(out);
 }

@@ -19,9 +19,6 @@ using namespace std;
 
 class SudokuFitness : public Fitness {
 public:
-	//constructor
-	SudokuFitness();
-
 	int howFit(shared_ptr<Puzzle>& sudoku) override;
 
 	int checkDuplicateRow(shared_ptr<Sudoku>& s);

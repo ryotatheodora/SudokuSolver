@@ -6,7 +6,7 @@
 
 #include "SudokuPopulation.h"
 
-SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle){
+SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle>& puzzle){
     size_ = pop_size;
     fitness_ptr_ = make_shared<SudokuFitness>();
     factory_ptr_ = make_shared<SudokuFactory>();

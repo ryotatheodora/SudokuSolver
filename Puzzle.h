@@ -15,8 +15,8 @@ public:
     friend ostream& operator<<(ostream &out, Puzzle &p);    
 	friend istream& operator>>(istream &in, Puzzle &p);
 	
-    Puzzle(){} // constructor
-	virtual ~Puzzle(){} // destructor 
+    Puzzle(); // constructor
+	virtual ~Puzzle(); // destructor 
 
     bool **fixed;	
 	int **grid;
