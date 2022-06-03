@@ -20,7 +20,7 @@
 #include <memory>
 
 using namespace std;
-using Individual = pair<int, Puzzle*>;
+using Individual = pair<int, shared_ptr<Puzzle>>;
 
 class Population {
 protected:
@@ -54,7 +54,7 @@ public:
 	* method: cull
 	* eliminates x% least fit of a generation
 	*/
-	void cull(double x);
+	virtual void cull(double x) = 0;
 
 	/*
 	* method: pure virtual bestFitness

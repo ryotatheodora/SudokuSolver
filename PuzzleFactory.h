@@ -18,10 +18,11 @@ using namespace std;
 class PuzzleFactory {
 
 public:
-    //method
-    virtual Puzzle* createPuzzle(Puzzle* p) = 0;
-    //destructor 
-    virtual ~PuzzleFactory() = 0;
+    shared_ptr<Puzzle> createPuzzle(shared_ptr<Puzzle> &p);
+    virtual ~PuzzleFactory();
+
+protected:
+    shared_ptr<Reproduction> reproduction_;
 };
 
 #endif //PUZZLEFACTORY_H_

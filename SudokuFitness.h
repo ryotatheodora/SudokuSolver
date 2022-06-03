@@ -22,12 +22,12 @@ public:
 	//constructor
 	SudokuFitness();
 
-	int howFit(Puzzle *sudoku);
+	int howFit(shared_ptr<Puzzle>& sudoku) override;
 
-	int checkDuplicateRow(Sudoku *s);
-	int checkDuplicateColumn(Sudoku *s);
-    int checkAllBlock(Sudoku *s);
-	int checkDuplicateBlock(Sudoku *s, int x, int y);
+	int checkDuplicateRow(shared_ptr<Sudoku>& s);
+	int checkDuplicateColumn(shared_ptr<Sudoku>& s);
+    int checkAllBlock(shared_ptr<Sudoku>& s);
+	int checkDuplicateBlock(shared_ptr<Sudoku>& s, int x, int y);
     
 };
 #endif //SUDOKUFITNESS_H_

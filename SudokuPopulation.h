@@ -22,7 +22,7 @@ using namespace std;
 class SudokuPopulation: public Population {
 public:
     // initialized population 
-    SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle);
+    SudokuPopulation(int pop_size, shared_ptr<Puzzle>& puzzle);
     // removes the boom x percentage of puzzle based off of fitness
     void cull(double x) override;
     void newGeneration() override;
@@ -30,9 +30,5 @@ public:
     int bestFitness() override;
     //returns the puzzle with the best fitness score
     Individual bestIndividual() override;
-
-protected:
-    SudokuFitness *fitness;
-    SudokuFactory *factory;
 };
 #endif

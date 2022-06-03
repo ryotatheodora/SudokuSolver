@@ -11,6 +11,7 @@
 
 #ifndef REPRODUCTION_H_
 #define REPRODUCTION_H_
+
 #include "Puzzle.h"
 #include <memory>
 
@@ -20,7 +21,7 @@ class Reproduction {
 
 public:
     // makeOffspring method, takes a puzzle and returns new puzzle
-    virtual Puzzle* makeOffspring(Puzzle *p) = 0;
-    ~Reproduction() = default;
+    virtual shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle>& p) = 0;
+    virtual ~Reproduction() = default;
 };
 #endif //REPRODUCTION_H_

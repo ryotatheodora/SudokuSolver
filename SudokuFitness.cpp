@@ -12,10 +12,10 @@
 #include <set>
 using namespace std;
 
-int SudokuFitness::howFit(Puzzle* sudoku) {
+int SudokuFitness::howFit(shared_ptr<Puzzle>& sudoku) {
     //make copy of puzzle
 
-    Sudoku *p = dynamic_cast<Sudoku*>(sudoku);
+    shared_ptr<Sudoku> p = dynamic_pointer_cast<Sudoku>(sudoku);
 
     int fitness = checkDuplicateRow(p) + checkDuplicateColumn(p) + checkAllBlock(p);
 
@@ -23,7 +23,7 @@ int SudokuFitness::howFit(Puzzle* sudoku) {
 }
 
 // check duplicate in every row of the sudoku
-int SudokuFitness::checkDuplicateRow(Sudoku *s) {
+int SudokuFitness::checkDuplicateRow(shared_ptr<Sudoku>& s) {
     int duplicate = 0;
 
     for(int row = 0; row < 9; row++) {
@@ -40,7 +40,7 @@ int SudokuFitness::checkDuplicateRow(Sudoku *s) {
 }
 
 // check duplicate in every column of the sudoku
-int SudokuFitness::checkDuplicateColumn(Sudoku *s) {
+int SudokuFitness::checkDuplicateColumn(shared_ptr<Sudoku>& s) {
     int duplicate = 0;
 
     for(int column = 0; column < 9; column++) {
@@ -57,7 +57,7 @@ int SudokuFitness::checkDuplicateColumn(Sudoku *s) {
 }
 
 // Move from one block to another block
-int SudokuFitness::checkAllBlock(Sudoku *s) {
+int SudokuFitness::checkAllBlock(shared_ptr<Sudoku>& s) {
     int duplicate = 0;
     for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
@@ -68,7 +68,7 @@ int SudokuFitness::checkAllBlock(Sudoku *s) {
 }
 
 // check duplicates in 3X3 grids of the sudoku
-int SudokuFitness::checkDuplicateBlock(Sudoku *s, int x, int y) {
+int SudokuFitness::checkDuplicateBlock(shared_ptr<Sudoku>& s, int x, int y) {
     int temp[9];
 	int duplicate = 0;
     int k = 0;

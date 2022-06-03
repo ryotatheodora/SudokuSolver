@@ -11,11 +11,13 @@
 #define FITNESS_H_
 
 #include <iostream>
+#include <memory>
 #include "Puzzle.h"
 using namespace std;
 
 class Fitness {
 public:
-	virtual int howFit(Puzzle *p) = 0;    
+	virtual int howFit(shared_ptr<Puzzle>& p) = 0;
+	virtual ~Fitness() = default; 
 };
 #endif //FITNESS_H_
