@@ -58,5 +58,4 @@ Individual GeneticAlgorithm<T>::run() {
 
     return best;
 }
-
 #endif
