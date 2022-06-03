@@ -7,7 +7,7 @@
 
 #include "SudokuPopulation.h"
 
-SudokuPopulation::SudokuPopulation(int pop_size, Puzzle *puzzle){
+SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle){
     size_ = pop_size;
 
     for(int i = 0; i < size_; i++) {
