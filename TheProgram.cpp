@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
     int max_gen_ = atoi(argv[2]);
     
     ifstream file;
-    file.open("SudokuTest.txt");
+    file.open("TestCase2.txt");
 
     //reading in from the command line argument for initial puzzle
     shared_ptr<Puzzle> p = make_shared<Sudoku>();

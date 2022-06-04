@@ -35,7 +35,6 @@ int SudokuFitness::checkDuplicateRow(shared_ptr<Sudoku>& s) {
             }
         }
     }
-
     return duplicate;
 }
 
