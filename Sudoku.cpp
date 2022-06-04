@@ -83,7 +83,7 @@ istream& Sudoku::streamInputHelper(istream& in) {
     int column = 0;
 	char c;
 	
-	while (in.get(c)) {                                         
+	while (in.get(c)) {                                       
 		if (c <= '9' && c >= '0') {
 			if (c != '0') {
 				fixed[column][row] = true ;
@@ -91,7 +91,7 @@ istream& Sudoku::streamInputHelper(istream& in) {
 				fixed[column][row] = false;
 			}
 
-			grid[column][row] = (c - '0');    
+			grid[column][row] = c - '0'; //cannot do this: character minus character
 			column++;
 
 			if (column > 8) {

@@ -28,11 +28,11 @@ shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& p) {
 
     int size = sizeof(p->grid); 
 
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++ ) {
+    for (int i = 0; i < size + 1; i++) {
+        for (int j = 0; j < size + 1; j++ ) {
             if(!p->isFixed(i, j) && getProbability()) { //isFixed coming from yohanes sudoku class probability
                 // then change value
-                copy->grid[i][j] = rand() % 10 + 1; 
+                copy->grid[i][j] = rand() % 10; // adding 48 to correlate with ASCII 0 - 9
             }
         }
     }
