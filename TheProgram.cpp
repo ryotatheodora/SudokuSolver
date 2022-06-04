@@ -18,6 +18,7 @@
 using namespace std;
 
 int main(int argc, char **argv) {
+    srand((unsigned int)time(NULL));
     if(argc != 3) {
         cerr << "Input: " << argv[0] << " <POPULATION SIZE> , <MAX GENERATION>" << endl;
         return 1;

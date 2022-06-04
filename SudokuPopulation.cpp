@@ -19,7 +19,7 @@ SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle>& puzzle){
 void SudokuPopulation::cull(double x) {
     //sorts the vector using the C++ sorting feature
     sort(puzzle_vector_.begin(), puzzle_vector_.end());
-    int left = (1- x) * size_;
+    int left = ( 1- x) * size_;
     left = max(1, left);;
     puzzle_vector_.erase(puzzle_vector_.begin() + left, puzzle_vector_.end());
 }
