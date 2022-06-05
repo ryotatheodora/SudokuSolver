@@ -5,13 +5,11 @@
  **/
 #include "Sudoku.h"
 
-//default constructor
 Sudoku::Sudoku() {
 	//resize the layout to 81
 	layout_.resize(81);
 }
 
-// destructor
 Sudoku::~Sudoku() {
 }
 

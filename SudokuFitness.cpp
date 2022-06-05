@@ -3,7 +3,6 @@
  * @author Yohanes, Ryota Theodora
  * @date 2022-06-04
  **/
-
 #include "Puzzle.h"
 #include "Sudoku.h"
 #include "SudokuFitness.h"

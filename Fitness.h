@@ -6,7 +6,6 @@
  * Puzzle (subclass) object and returns an int
  * @date 2022-05-26
  **/
-
 #ifndef FITNESS_H_
 #define FITNESS_H_
 

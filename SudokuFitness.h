@@ -6,7 +6,6 @@
  * Implements "howFit" for Sudoku objects
  * @date 2022-06-04
  **/
-
 #ifndef SUDOKUFITNESS_H_
 #define SUDOKUFITNESS_H_
 

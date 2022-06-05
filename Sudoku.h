@@ -9,7 +9,6 @@
  * Outputs sudoku puzzle
  * @date 2022-06-04
  **/
-
 #ifndef SUDOKU_H_
 #define SUDOKU_H_
 

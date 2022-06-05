@@ -6,7 +6,6 @@
  * The SudokuFactory uses a SudokuOffspring object and implements "createPuzzle" to produce new Sudoku objects.
  * @date 2022-05-26
  **/
-
 #ifndef SUDOKUOFACTORY_H_
 #define SUDOKUOFACTORY_H_
 

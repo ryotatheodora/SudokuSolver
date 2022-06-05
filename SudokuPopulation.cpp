@@ -3,7 +3,6 @@
 * @author Ryota Theodora
 * Date: 6/2/2022
 **/
-
 #include "SudokuPopulation.h"
 
 SudokuPopulation::SudokuPopulation(int pop_size, shared_ptr<Puzzle>& puzzle){

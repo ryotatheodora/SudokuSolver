@@ -3,7 +3,6 @@
  * @author Yohanes, Ryota Theodora
  * @date 2022-06-04
  **/
-
 #ifndef PUZZLE_H_
 #define PUZZLE_H_
 

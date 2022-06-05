@@ -9,7 +9,6 @@
 * best individual returns the puzzle with the best fitness
 * Date: 5/30/2022
 */
-
 #ifndef POPULATION_H_
 #define POPULATION_H_
 

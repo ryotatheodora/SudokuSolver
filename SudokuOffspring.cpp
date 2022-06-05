@@ -3,7 +3,6 @@
  * @author Tammy Le, Ryota Theodora
  * @date 2022-06-04
  **/
-
 #include "SudokuOffspring.h"
 
 shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& puzzle) {

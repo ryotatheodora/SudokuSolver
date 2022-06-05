@@ -9,6 +9,7 @@ if the maximum number of generations limit has been reached,
 * can choose to output up to 10 puzzles as it executes
 * Date: 5/30/2022
 */
+
 #ifndef GENETIC_ALGORITHM_H_
 #define GENETIC_ALGORITHM_H_
 
@@ -30,8 +31,9 @@ public:
 };
 
 template<typename T>
-GeneticAlgorithm<T>::GeneticAlgorithm(int max_gen, int pop_size, shared_ptr<Puzzle> &initial): max_generation_(max_gen), population_(make_shared<T>(pop_size, initial)){
-
+GeneticAlgorithm<T>::GeneticAlgorithm(int max_gen, int pop_size, shared_ptr<Puzzle> &initial){
+    max_generation_ = max_gen;
+    population_ = make_shared<T>(pop_size, initial);
 }
 
 template<typename T>

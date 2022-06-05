@@ -8,7 +8,6 @@
  * Copy of the original Sudoku, with some probability of changing each variable number in the puzzle as it is copied.
  * @date 2022-06-04
  **/
-
 #ifndef SUDOKUOFFSPRING_H_
 #define SUDOKUOFFSPRING_H_
 
