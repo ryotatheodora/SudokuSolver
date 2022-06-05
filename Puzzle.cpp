@@ -1,21 +1,20 @@
 /**
  * @file Puzzle.cpp
- * @author Yohanes
- * @date 2022-05-26
- **/
+ * @author Yohanes, Ryota Theodora
+ * @date 2022-06-04
+**/
 
 #include "Puzzle.h"
 
-Puzzle::Puzzle() {
-}
-
-Puzzle::~Puzzle() {
-}
-
-ostream& operator<<(ostream &out, Puzzle &p) {
+ostream& operator<<(ostream &out, const Puzzle &p) {
     return p.streamOutputHelper(out);
 }
 
 istream& operator>>(istream &in, Puzzle &p) {
     return p.streamInputHelper(in);
 }
+
+// destructor
+Puzzle::~Puzzle() {
+}
+

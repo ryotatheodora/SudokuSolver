@@ -1,40 +1,34 @@
 /**
  * @file SudokuOffspring.cpp
- * @author Le, Tammy
- * @date 2022-05-26
+ * @author Tammy Le, Ryota Theodora
+ * @date 2022-06-04
  **/
 
 #include "SudokuOffspring.h"
 
-SudokuOffspring::SudokuOffspring(){}
+shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& puzzle) {
+    shared_ptr<Sudoku> p = dynamic_pointer_cast<Sudoku>(puzzle);
+    const int probability = 5;
 
-SudokuOffspring::~SudokuOffspring(){}
+    // Initializing random generator
+    random_device random;
+    //Mersenne Twister 19937 generator
+    mt19937 mt(random());
 
-//helper function to retreive probability
-bool SudokuOffspring::getProbability() {
-    int random = rand() % 100 + 1;
-    return random <= 5;
-}
+    auto range_of_100 = bind(uniform_int_distribution<int>((0, 99)), mt);
+    auto range_of_9 = bind(uniform_int_distribution<int>(1, 9), mt);
 
-// method to make offspring 
-// (uses the method in sudoku class where that method 
-// checked if the values are fixed or variable)
-shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& p) {
-    // code for make offspring here - pseudocode:
+    shared_ptr<Sudoku> sudoku_ = make_shared<Sudoku>();
+    for(int i = 0; i < 9; i++) {
+        for(int j = 0; j < 9; j++) {
+            int val = p->value(i, j);
+            bool deter = p->determined(i, j);
 
-    //make copy of puzzle
-    shared_ptr<Puzzle>& copy = p;
-    //visit each cell (x,y) - double for loop bc matrix 
-
-    int size = sizeof(p->grid); 
-
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++ ) {
-            if(!p->isFixed(i, j) && getProbability()) { //isFixed coming from yohanes sudoku class probability
-                // then change value
-                copy->grid[i][j] = rand() % 10 + 1; 
+            if(val == 0 || (range_of_100() < probability && !deter)) {
+                val = range_of_9();
             }
+            sudoku_->setValue(i, j, val, deter);
         }
     }
-    return copy;
+    return sudoku_;
 }
