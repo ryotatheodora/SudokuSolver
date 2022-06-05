@@ -27,12 +27,15 @@ int main(int argc, char **argv) {
     int population_size_ = atoi(argv[1]);
     int max_gen_ = atoi(argv[2]);
     
-    ifstream file;
-    file.open("TestCase2.txt");
+    //ifstream file;
+    //file.open("TestCase1.txt");
+    
+    cout << "Insert 81-digit to solve: " << endl;
 
     //reading in from the command line argument for initial puzzle
     shared_ptr<Puzzle> p = make_shared<Sudoku>();
-    file >> *p;
+    //file >> *p;
+    cin >> *p;
     cout << *p;
 
     //initialize genetic_algo_ with max generation, pop_size, and initial puzzle
