@@ -17,6 +17,7 @@
 using namespace std;
 
 int main(int argc, char **argv) {
+    srand((unsigned int)time(NULL));
     if(argc != 3) {
         cerr << "Input: " << argv[0] << " <POPULATION SIZE> , <MAX GENERATION>" << endl;
         return 1;
@@ -27,7 +28,7 @@ int main(int argc, char **argv) {
     int max_gen_ = atoi(argv[2]);
     
     ifstream file;
-    file.open("SudokuTest.txt");
+    file.open("TestCase2.txt");
 
     //reading in from the command line argument for initial puzzle
     shared_ptr<Puzzle> p = make_shared<Sudoku>();
