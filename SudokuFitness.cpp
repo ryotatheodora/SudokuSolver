@@ -32,29 +32,12 @@ int SudokuFitness::howFit(shared_ptr<Puzzle>& sudoku) {
         }
         update_duplicates(count);
     }
-<<<<<<< HEAD
-
+    
     //check duplicates within row
     for(int i = 0; i < 9; i++) {
         int count[10] = {0};
         for(int j = 0; j < 9; j++) {
             ++count[sudoku_->value(i, j)];
-=======
-    return duplicate;
-}
-
-// check duplicate in every column of the sudoku
-int SudokuFitness::checkDuplicateColumn(shared_ptr<Sudoku>& s) {
-    int duplicate = 0;
-
-    for(int column = 0; column < 9; column++) {
-        for(int row = 0; row < 9; row++) {
-            for(int i = row + 1; i < 9; i++) {
-                if (s->grid[i][column] == s->grid[row][column]) {
-					duplicate++;
-				}
-            }
->>>>>>> f4d08f9fb5ac4d471a013df96a49b5ff0c33ced0
         }
         update_duplicates(count);
     }
