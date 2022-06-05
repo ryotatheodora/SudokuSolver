@@ -1,9 +1,8 @@
 /**
  * @file Puzzle.h
- * @author Yohanes
- * @date 2022-05-26
+ * @author Yohanes, Ryota Theodora
+ * @date 2022-06-04
  **/
-
 #ifndef PUZZLE_H_
 #define PUZZLE_H_
 
@@ -12,21 +11,12 @@ using namespace std;
 
 class Puzzle {
 public:
-    friend ostream& operator<<(ostream &out, Puzzle &p);    
-	friend istream& operator>>(istream &in, Puzzle &p);
-	
-    Puzzle(); // constructor
+    friend ostream& operator<<(ostream& out, const Puzzle& p);    
+	friend istream& operator>>(istream& in, Puzzle& p);
 	virtual ~Puzzle(); // destructor 
 
-    bool **fixed;	
-	int **grid;
-	int fitnessScore;
-
-    // helper method
-    virtual bool isFixed(int i, int j) = 0;
-    
 private:
-    virtual istream &streamInputHelper(istream &in) = 0;
-    virtual ostream &streamOutputHelper(ostream &out) const = 0;
+    virtual istream& streamInputHelper(istream& in) = 0;
+    virtual ostream& streamOutputHelper(ostream& out) const = 0;
 };
 #endif //PUZZLE_H_

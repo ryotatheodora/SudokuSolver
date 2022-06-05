@@ -1,15 +1,32 @@
 /**
  * @file SudokuOffspring.cpp
- * @author Le, Tammy
- * @date 2022-05-26
+ * @author Tammy Le, Ryota Theodora
+ * @date 2022-06-04
  **/
-
 #include "SudokuOffspring.h"
 
-SudokuOffspring::SudokuOffspring(){}
+shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& puzzle) {
+    shared_ptr<Sudoku> p = dynamic_pointer_cast<Sudoku>(puzzle);
+    const int probability = 5;
 
-SudokuOffspring::~SudokuOffspring(){}
+<<<<<<< HEAD
+    // Initializing random generator
+    random_device random;
+    //Mersenne Twister 19937 generator
+    mt19937 mt(random());
 
+    auto range_of_100 = bind(uniform_int_distribution<int>((0, 99)), mt);
+    auto range_of_9 = bind(uniform_int_distribution<int>(1, 9), mt);
+
+    shared_ptr<Sudoku> sudoku_ = make_shared<Sudoku>();
+    for(int i = 0; i < 9; i++) {
+        for(int j = 0; j < 9; j++) {
+            int val = p->value(i, j);
+            bool deter = p->determined(i, j);
+
+            if(val == 0 || (range_of_100() < probability && !deter)) {
+                val = range_of_9();
+=======
 //helper function to retreive probability
 bool SudokuOffspring::getProbability() {
     int random = rand() % 1000 + 1;
@@ -35,8 +52,10 @@ shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& p) {
                     int random = rand() % 10;
                     copy->grid[i][j] = random; // adding 48 to correlate with ASCII 0 - 9
                 }
+>>>>>>> f4d08f9fb5ac4d471a013df96a49b5ff0c33ced0
             }
+            sudoku_->setValue(i, j, val, deter);
         }
     }
-    return copy;
+    return sudoku_;
 }

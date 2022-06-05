@@ -4,8 +4,6 @@
 * Implements population, uses sudokuFitness and sudokuFactory 
 * Date: 5/30/2022
 */
-
-
 #ifndef SUDOKU_POPULATION_H_
 #define SUDOKU_POPULATION_H_
 

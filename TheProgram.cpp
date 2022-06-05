@@ -4,7 +4,6 @@
 *   
 * Date: 5/30/2022
 */
-
 #include "SudokuPopulation.h"
 #include "GeneticAlgorithm.h"
 #include "Sudoku.h"
