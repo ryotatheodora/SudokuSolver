@@ -17,7 +17,7 @@ int SudokuFitness::howFit(shared_ptr<Puzzle>& sudoku) {
 
     //duplicates counter method
     auto update_duplicates = [&duplicates](int count[]) {
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 10; ++i) {
             if(count[i] > 1) {
                 duplicates += count[i];
             }
@@ -25,33 +25,32 @@ int SudokuFitness::howFit(shared_ptr<Puzzle>& sudoku) {
     };
     
     //check duplicates within column
-    for(int i = 0; i < 9; i++) {
+    for(int i = 0; i < 9; ++i) {
         int count[10] = {0};
-        for(int j = 0; j < 9; j++) {
-            ++count[sudoku_->value(i, j)];
+        for(int j = 0; j < 9; ++j) {
+            ++count[sudoku_->value(j, i)];
         }
         update_duplicates(count);
     }
     
     //check duplicates within row
-    for(int i = 0; i < 9; i++) {
+    for(int i = 0; i < 9; ++i) {
         int count[10] = {0};
-        for(int j = 0; j < 9; j++) {
+        for(int j = 0; j < 9; ++j) {
             ++count[sudoku_->value(i, j)];
         }
         update_duplicates(count);
     }
 
-
     //check duplicates within block
-    for(int i = 0; i < 9; i++) {
+    for(int i = 0; i < 9; ++i) {
         //get the location of the blocks within a 9x9 sudoku
         int row_block = (i / 3) * 3;
         int col_block = (i % 3) * 3;
         int count[10] = {0};
-        for(int j = row_block; j < row_block + 3; j++) {
-            for(int k = col_block; k < col_block + 3; k++) {
-                ++count[sudoku_->value(i, j)];
+        for(int j = row_block; j < row_block + 3; ++j) {
+            for(int k = col_block; k < col_block + 3; ++k) {
+                ++count[sudoku_->value(j, k)];
             }
         }
         update_duplicates(count);

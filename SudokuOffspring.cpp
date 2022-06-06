@@ -6,7 +6,7 @@
 #include "SudokuOffspring.h"
 
 shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& puzzle) {
-    shared_ptr<Sudoku> p = dynamic_pointer_cast<Sudoku>(puzzle);
+    shared_ptr<Sudoku> puzzle_ = dynamic_pointer_cast<Sudoku>(puzzle);
     const int probability = 5;
 
     // Initializing random generator
@@ -18,10 +18,10 @@ shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& puzzle) {
     auto range_of_9 = bind(uniform_int_distribution<int>(1, 9), mt);
 
     shared_ptr<Sudoku> sudoku_ = make_shared<Sudoku>();
-    for(int i = 0; i < 9; i++) {
-        for(int j = 0; j < 9; j++) {
-            int val = p->value(i, j);
-            bool deter = p->determined(i, j);
+    for(int i = 0; i < 9; ++i) {
+        for(int j = 0; j < 9; ++j) {
+            int val = puzzle_->value(i, j);
+            bool deter = puzzle_->determined(i, j);
 
             if(val == 0 || (range_of_100() < probability && !deter)) {
                 val = range_of_9();
@@ -29,5 +29,6 @@ shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& puzzle) {
             sudoku_->setValue(i, j, val, deter);
         }
     }
+
     return sudoku_;
 }
