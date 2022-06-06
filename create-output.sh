@@ -61,15 +61,9 @@ echo "====================================================="
 
 g++ -g -std=c++11 -Wall -Wextra -Wno-sign-compare *.cpp
 
-echo "====================================================="
-echo "2. Runs and produces correct output"
-echo "====================================================="
-
-# Execute program
-$EXEC_PROGRAM
 
 echo "====================================================="
-echo "3. clang-tidy warnings are fixed"
+echo "2. clang-tidy warnings are fixed"
 echo "====================================================="
 
 if hash clang-tidy 2>/dev/null; then
@@ -79,7 +73,7 @@ else
 fi
 
 echo "====================================================="
-echo "4. clang-format does not find any formatting issues"
+echo "3. clang-format does not find any formatting issues"
 echo "====================================================="
 
 if hash clang-format 2>/dev/null; then
@@ -95,7 +89,7 @@ else
 fi
 
 echo "====================================================="
-echo "5. No memory leaks using g++"
+echo "4. No memory leaks using g++"
 echo "====================================================="
 
 rm ./a.out 2>/dev/null
@@ -106,7 +100,7 @@ $EXEC_PROGRAM > /dev/null 2> /dev/null
 
 
 echo "====================================================="
-echo "6. No memory leaks using valgrind, look for \"definitely lost\" "
+echo "5. No memory leaks using valgrind, look for \"definitely lost\" "
 echo "====================================================="
 
 rm ./a.out 2>/dev/null
@@ -122,7 +116,7 @@ else
 fi
 
 echo "====================================================="
-echo "7. Tests have full code coverage"
+echo "6. Tests have full code coverage"
 echo "====================================================="
 
 if [ -f "check-code-coverage.sh" ]; then
