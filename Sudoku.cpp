@@ -34,7 +34,7 @@ void Sudoku::setValue(int row, int col, int val, bool deter)
     layout_[row * 9 + col] = {val, deter};
 }
 
-// helper function for output
+// helper function for output to produce a "human friendly" output
 ostream &Sudoku::streamOutputHelper(ostream &out) const
 {
     const string border_ = "+-------+-------+-------+";
@@ -50,18 +50,22 @@ ostream &Sudoku::streamOutputHelper(ostream &out) const
             // prints number within blocks
             out << " " << layout_[row * 9 + col].first;
             // right borders
-            if (col % 3 == 2)
-                out << " |";
+            if (col % 3 == 2) {
+				out << " |";
+			}
         }
         out << endl;
+
         // checks for 3rd row within block
-        if (row % 3 == 2)
-            out << border_ << endl;
+        if (row % 3 == 2) {
+			out << border_ << endl;
+		}    
     }
     return out;
 }
 
 // helper function for handling input stream
+// read a puzzle in a compact text format
 istream &Sudoku::streamInputHelper(istream &in)
 {
     // clear layout_
