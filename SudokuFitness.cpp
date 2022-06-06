@@ -28,7 +28,7 @@ int SudokuFitness::howFit(shared_ptr<Puzzle> &sudoku)
         }
     };
 
-    // check duplicates within column
+    // Check duplicates value within the Sudoku column
     for (int i = 0; i < 9; ++i)
     {
         int count[10] = {0};
@@ -39,7 +39,7 @@ int SudokuFitness::howFit(shared_ptr<Puzzle> &sudoku)
         update_duplicates(count);
     }
 
-    // check duplicates within row
+    // Check duplicates value within the Sudoku row
     for (int i = 0; i < 9; ++i)
     {
         int count[10] = {0};
@@ -50,7 +50,7 @@ int SudokuFitness::howFit(shared_ptr<Puzzle> &sudoku)
         update_duplicates(count);
     }
 
-    // check duplicates within block
+    // Check duplicates within block of 3x3 within Sudoku 
     for (int i = 0; i < 9; ++i)
     {
         // get the location of the blocks within a 9x9 sudoku
