@@ -7,7 +7,7 @@
 
 shared_ptr<Puzzle> SudokuOffspring::makeOffspring(shared_ptr<Puzzle>& puzzle) {
     shared_ptr<Sudoku> puzzle_ = dynamic_pointer_cast<Sudoku>(puzzle);
-    const int probability = 2;
+    const int probability = 5;
 
     // Initializing random generator
     random_device random;
