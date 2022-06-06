@@ -1,9 +1,9 @@
 /**
  * @file PuzzleFactory.h
- * @author Le, Tammy
- * @brief PuzzleFactory <<interface>> 
+ * @author Tammy Le, Ryota Theodora, Yohanes Koeswono
+ * @brief PuzzleFactory <<interface>>
  * Notes:
- * SudokuFactory implements this class. This class is to create new puzzles from old ones. 
+ * SudokuFactory implements this class. This class is to create new puzzles from old ones.
  * @date 2022-05-26
  **/
 #ifndef PUZZLEFACTORY_H_
@@ -15,12 +15,16 @@
 
 using namespace std;
 
-class PuzzleFactory {
+class PuzzleFactory
+{
 public:
+    // method: creates new puzzles from old puzzles
     shared_ptr<Puzzle> createPuzzle(shared_ptr<Puzzle> &p);
+    // destructor
     virtual ~PuzzleFactory();
+
 protected:
     shared_ptr<Reproduction> reproduction_;
 };
 
-#endif //PUZZLEFACTORY_H_
+#endif // PUZZLEFACTORY_H_

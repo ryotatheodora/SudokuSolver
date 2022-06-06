@@ -1,7 +1,9 @@
 Members:  
-- Ryota  
-- Tammy Le
-- Yohanes  
+Tammy Le, Ryota Theodora, Yohanes Koeswono
+
+CSS 343 Spring 
+
+Report:
 
 Exact Steps to build and run program 
 

@@ -1,8 +1,8 @@
 /**
  * @file Fitness.h
- * @author Yohanes
+ * @author Tammy Le, Ryota Theodora, Yohanes Koeswono
  * @brief Notes: Fitness is used by a Population to evaluate individual Puzzles
- * Fitness subclasses must implement a "howFit" method, which takes a 
+ * Fitness subclasses must implement a "howFit" method, which takes a
  * Puzzle (subclass) object and returns an int
  * @date 2022-05-26
  **/
@@ -14,9 +14,12 @@
 #include "Puzzle.h"
 using namespace std;
 
-class Fitness {
+class Fitness
+{
 public:
-	virtual int howFit(shared_ptr<Puzzle>& p) = 0;
-	virtual ~Fitness() = default; 
+	// method: howFit which takes a puzzle object and returns int
+	virtual int howFit(shared_ptr<Puzzle> &p) = 0;
+	// destructor
+	virtual ~Fitness() = default;
 };
-#endif //FITNESS_H_
+#endif // FITNESS_H_

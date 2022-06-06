@@ -1,7 +1,7 @@
 /**
  * @file Sudoku.h
- * @author Yohanes, Ryota Theodora
- * @brief 
+ * @author Tammy Le, Ryota Theodora, Yohanes Koeswono
+ * @brief
  * Notes:
  * 9x9 grid with fixed (isFixed) and initialized data
  * Output operators - used through puzzle inheritance
@@ -20,25 +20,29 @@
 
 using namespace std;
 
-class Sudoku : public Puzzle {
+class Sudoku : public Puzzle
+{
 public:
+    // constructor
     Sudoku();
+    // destructor
     ~Sudoku();
+    // helper function for input stream
     istream &streamInputHelper(istream &in) override;
+    // helper function for outout stream
     ostream &streamOutputHelper(ostream &out) const override;
-    //return value of position row, column on layout_
+    // return value of position row, column on layout_
     int value(int row, int column);
-    //returning the bool of a single cell is determined
+    // returning the bool of a single cell is determined
     bool determined(int row, int column);
-    //setting a value of a cell if cell is not determined
+    // setting a value of a cell if cell is not determined
     void setValue(int row, int column, int val, bool deter);
 
 private:
-    // vector to represent Sudoku layout as a list multiple of 9 
+    // vector to represent Sudoku layout as a list multiple of 9
     // row * 9 = 1 block
     // row * 9 + col = block position
-    vector<pair<int, bool>> layout_;
+    vector<pair<int, bool> > layout_;
 };
-
 
 #endif

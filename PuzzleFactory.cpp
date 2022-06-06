@@ -1,13 +1,15 @@
 /**
  * @file PuzzleFactory.cpp
- * @author Le, Tammy
+ * @author Tammy Le, Ryota Theodora, Yohanes Koeswono
  * @date 2022-05-26
  **/
 #include "PuzzleFactory.h"
 
-PuzzleFactory::~PuzzleFactory() {
+PuzzleFactory::~PuzzleFactory()
+{
 }
 
-shared_ptr<Puzzle> PuzzleFactory::createPuzzle(shared_ptr<Puzzle> &p) {
+shared_ptr<Puzzle> PuzzleFactory::createPuzzle(shared_ptr<Puzzle> &p)
+{
     return reproduction_->makeOffspring(p);
 }

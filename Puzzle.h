@@ -1,6 +1,6 @@
 /**
  * @file Puzzle.h
- * @author Yohanes, Ryota Theodora
+ * @author Tammy Le, Ryota Theodora, Yohanes Koeswono
  * @date 2022-06-04
  **/
 #ifndef PUZZLE_H_
@@ -9,14 +9,20 @@
 #include <iostream>
 using namespace std;
 
-class Puzzle {
+class Puzzle
+{
 public:
-    friend ostream& operator<<(ostream& out, const Puzzle& p);    
-	friend istream& operator>>(istream& in, Puzzle& p);
-	virtual ~Puzzle(); // destructor 
+    // method to hand output stream
+    friend ostream &operator<<(ostream &out, const Puzzle &p);
+    // method to handle input stream
+    friend istream &operator>>(istream &in, Puzzle &p);
+    // destructor - deallocate memory and cleanup
+    virtual ~Puzzle();
 
 private:
-    virtual istream& streamInputHelper(istream& in) = 0;
-    virtual ostream& streamOutputHelper(ostream& out) const = 0;
+    // helper method to hand input stream
+    virtual istream &streamInputHelper(istream &in) = 0;
+    // helper method to hand output stream
+    virtual ostream &streamOutputHelper(ostream &out) const = 0;
 };
-#endif //PUZZLE_H_
+#endif // PUZZLE_H_

@@ -1,9 +1,9 @@
 /*
-* Author: Ryota Theodora
-* file: SudokuPopulation.h
-* Implements population, uses sudokuFitness and sudokuFactory 
-* Date: 5/30/2022
-*/
+ * Author: Tammy Le, Ryota Theodora, Yohanes Koeswono
+ * file: SudokuPopulation.h
+ * Implements population, uses sudokuFitness and sudokuFactory
+ * Date: 5/30/2022
+ */
 #ifndef SUDOKU_POPULATION_H_
 #define SUDOKU_POPULATION_H_
 
@@ -17,16 +17,17 @@
 
 using namespace std;
 
-class SudokuPopulation: public Population {
+class SudokuPopulation : public Population
+{
 public:
-    // initialized population 
-    SudokuPopulation(int pop_size, shared_ptr<Puzzle>& puzzle);
+    // initialized population
+    SudokuPopulation(int pop_size, shared_ptr<Puzzle> &puzzle);
     // removes the boom x percentage of puzzle based off of fitness
     void cull(double x) override;
     void newGeneration() override;
     // returns the fitness value of the best puzzle
     int bestFitness() override;
-    //returns the puzzle with the best fitness score
+    // returns the puzzle with the best fitness score
     Individual bestIndividual() override;
 };
 #endif

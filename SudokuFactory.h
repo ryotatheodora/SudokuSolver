@@ -1,7 +1,7 @@
 /**
  * @file SudokuFactory.h
- * @author Le, Tammy
- * @brief 
+ * @author Tammy Le, Ryota Theodora, Yohanes Koeswono
+ * @brief
  * Notes:
  * The SudokuFactory uses a SudokuOffspring object and implements "createPuzzle" to produce new Sudoku objects.
  * @date 2022-05-26
@@ -14,12 +14,13 @@
 
 using namespace std;
 
-class SudokuFactory : public PuzzleFactory {
+class SudokuFactory : public PuzzleFactory
+{
 
 public:
-    //default constructor 
+    // default constructor
     SudokuFactory();
 
-    //createPuzzle implemented under PuzzleFactory
+    // createPuzzle implemented under PuzzleFactory
 };
-#endif //SUDOKUOFACTORY_H_
+#endif // SUDOKUOFACTORY_H_

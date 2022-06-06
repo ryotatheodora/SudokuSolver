@@ -1,10 +1,10 @@
 /**
  * @file SudokuOffspring.cpp
- * @author Tammy Le, Ryota Theodora
- * @brief 
+ * @author Tammy Le, Ryota Theodora, Yohanes Koeswono
+ * @brief
  * Notes:
  * The SudokuOffspring class implements "makeOffspring" for Sudoku objects.
- * Only need to implement mutation. 
+ * Only need to implement mutation.
  * Copy of the original Sudoku, with some probability of changing each variable number in the puzzle as it is copied.
  * @date 2022-06-04
  **/
@@ -20,9 +20,12 @@
 
 using namespace std;
 
-class SudokuOffspring : public Reproduction {
+class SudokuOffspring : public Reproduction
+{
 
 public:
-     shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle>& p) override;
- };
- #endif // SUDOKUOFFSPRING_H_
+    // method: makeOffspring for sudoku objects
+    // this takes a puzzle and return a new puzzle
+    shared_ptr<Puzzle> makeOffspring(shared_ptr<Puzzle> &p) override;
+};
+#endif // SUDOKUOFFSPRING_H_
