@@ -1,43 +1,26 @@
-Linux csslab11.uwb.edu 3.10.0-1160.11.1.el7.x86_64 #1 SMP Fri Dec 18 16:34:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-uid=870540(pisan) gid=2120870540(pisan) groups=2120870540(pisan),579804(faculty)
 =====================================================
 1. Compiles without warnings with -Wall -Wextra flags
 =====================================================
 =====================================================
-2. Runs and produces correct output
-=====================================================
-Starting test01
-* Testing ==, !=, [] and copy constructor
-Ending tes01
-Starting test02
-* Testing traversal
-Ending test02
-Starting test03
-* Testing rebalance
-Ending test03
-Starting AC test01
-* Testing basic autocomplete
-Ending tesAC01
-Starting AC test02
-* Testing cities autocomplete
-Ending tesAC02
-=====================================================
-3. clang-tidy warnings are fixed
+2. clang-tidy warnings are fixed
 =====================================================
 =====================================================
-4. clang-format does not find any formatting issues
+3. clang-format does not find any formatting issues
 =====================================================
-Running clang-format on ./autocomplete.cpp
-Running clang-format on ./bstmap.cpp
-Running clang-format on ./bstmapprinter.cpp
-Running clang-format on ./main.cpp
-Running clang-format on ./testac.cpp
-Running clang-format on ./testbst.cpp
+Running clang-format on ./Population.cpp
+Running clang-format on ./Puzzle.cpp
+Running clang-format on ./PuzzleFactory.cpp
+Running clang-format on ./Sudoku.cpp
+Running clang-format on ./SudokuFactory.cpp
+Running clang-format on ./SudokuFitness.cpp
+Running clang-format on ./SudokuOffspring.cpp
+Running clang-format on ./SudokuPopulation.cpp
+Running clang-format on ./TheProgram.cpp
 =====================================================
-5. No memory leaks using g++
+4. No memory leaks using g++
 =====================================================
 =====================================================
-6. No memory leaks using valgrind, look for "definitely lost" 
+5. No memory leaks using valgrind, look for "definitely lost" 
 =====================================================
 ==3886== Memcheck, a memory error detector
 ==3886== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
@@ -55,12 +38,11 @@ Running clang-format on ./testbst.cpp
 ==3886== For lists of detected and suppressed errors, rerun with: -s
 ==3886== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 =====================================================
-7. Tests have full code coverage
+6. Tests have full code coverage
 =====================================================
 ...
 deleted
 ...
-Sun Jan 17 19:36:34 PST 2021
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command
